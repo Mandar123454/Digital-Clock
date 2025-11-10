@@ -15,9 +15,8 @@ body {
   .heading {
     font-size: 3rem;
     color: #ff0040;
-    font-weight: 500px;
-    align-items: center;
-    background-color: salmon;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
   }
   
   .background-animation::before {
@@ -30,6 +29,11 @@ body {
                 radial-gradient(circle, rgba(255,255,255,0.03) 20%, transparent 20%) center/80px 80px;
     animation: moveWaves 20s linear infinite;
     z-index: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .background-animation::before { animation: none; }
+    #clock { animation: none; }
+    .footer p { animation: none; }
   }
   
   @keyframes moveWaves {
@@ -47,19 +51,19 @@ body {
     font-size: 5rem;
     padding: 30px 50px;
     color: #00ffe1;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.25);
     border: 3px solid #c400ff;
     border-radius: 20px;
     box-shadow: 0 0 20px #c400ff, 0 0 40px #ff00ff;
-    text-shadow: 0 0 10px 0 0 10px #00ffe1, 0 0 20px #00ffe1;
+    text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
     animation: pulse 1s infinite alternate ease-in-out;
     transition: all 0.3s ease;
   }
   
   
   #date {
-    font-size: 3rem;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin-top: 20px;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
   }
